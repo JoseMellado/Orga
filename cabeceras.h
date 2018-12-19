@@ -6,7 +6,7 @@ typedef struct Nodo{
 
 typedef struct IF_ID{
 	char ** instruccionCompleta;
-	char tipoInst;//tipo puede ser {R, I, J, M (lw y sw)}
+	char tipoInst;//tipo puede ser {R, I, J, j(jr), N(no instruccion)}
 	int nInstruccion;
 }IF_ID;
 
@@ -25,7 +25,7 @@ typedef struct ID_EX{
 typedef struct EX_MEM{
 	int resultadoALU;
 	int dato2;
-	int registroRd;
+	int writeData;
 	char * instruccion;
 	char tipoInst;
 	int nInstruccion;
@@ -34,7 +34,7 @@ typedef struct EX_MEM{
 typedef struct MEM_WB{
 	int datoMemoria;
 	int resultadoALU;
-	int registroRd;
+	int writeData;
 	char * instruccion;
 	char tipoInst;
 	int nInstruccion;

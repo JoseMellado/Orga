@@ -23,3 +23,29 @@ void correrString(int inicio, char * cadena){
 	}
 	cadena[strlen(cadena)-1] = '\0';
 }
+
+//Función que eleva el entero x al entero y con retorno entero
+int intPow(int x, int y){
+	int valor = 1;
+	while(y > 0){
+		valor = valor*x;
+		y--;
+	}
+	return valor;
+}
+
+//Función que transforma un string a numero entero. Se asume que cada caracter del string es efectivamente un número.
+int stringToInt(char * string){
+	int valor = 0;
+	int i = strlen(string)-1;
+    int j = 0;
+	for(i; i>=0;i--,j++){
+		if(string[i]-'0' >= 0 && string[i] - '0' <= 9){
+			valor = (string[i]-'0')*intPow(10,j)+valor;
+		}
+		else{
+			return -1
+		}
+	}
+	return valor;
+}
