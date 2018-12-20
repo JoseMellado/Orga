@@ -6,7 +6,7 @@ typedef struct Nodo{
 
 typedef struct IF_ID{
 	char ** instruccionCompleta;
-	char tipoInst;//tipo puede ser {R, I, J, j(jr), N(no instruccion)}
+	char tipoInst;//tipo puede ser {R, I, J, j(jr), E(etiqueta), N(no instruccion, V (vacío))}
 	int nInstruccion;
 }IF_ID;
 
