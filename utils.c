@@ -1,3 +1,5 @@
+#include "cabeceras.h"
+
 //Función que borra espacios innecesarios en una cadena, para así facilitar el split de este.
 //Al usar esta función todas las cadenas quedarán con el formato: "palabra1 palabra2 ... palabraN"
 void borrarEspacios(char * cadena){
@@ -48,4 +50,26 @@ int stringToInt(char * string){
 		}
 	}
 	return valor;
+}
+
+//Función que busca etiqueta o dirección
+Nodo * encontraEtiqueta(Nodo * inicio, char * etiqueta, int direccion){
+	if(etiqueta = NULL){
+		while(inicio != NULL){
+			if(strcmp(inicio->instruccion[0],etiqueta) == 0){
+				return inicio;
+			}
+			inicio = inicio->siguiente;
+		}
+		return NULL;
+	}
+	else{
+		while(inicio != NULL){
+			if(inicio->numero == direccion){
+				return inicio;
+			}
+			inicio = inicio->siguiente;
+		}
+		return NULL;
+	}
 }

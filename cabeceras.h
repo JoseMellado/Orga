@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
 typedef struct Nodo{
 	char ** instruccion;
 	int numero;
@@ -29,6 +34,8 @@ typedef struct EX_MEM{
 	char * instruccion;
 	char tipoInst;
 	int nInstruccion;
+	int salto;
+	int hazardLw;
 }EX_MEM;
 
 typedef struct MEM_WB{
@@ -39,3 +46,19 @@ typedef struct MEM_WB{
 	char tipoInst;
 	int nInstruccion;
 }MEM_WB;
+
+
+void borrarEspacios(char * cadena);
+void correrString(int inicio, char * cadena);
+int intPow(int x, int y);
+int stringToInt(char * string);
+Nodo * encontraEtiqueta(Nodo * inicio, char * etiqueta, int direccion);
+Nodo * descomponer(char * cadena, Nodo * nodo, int numeroLinea);
+Nodo * leerArchivo(char * direccion);
+void ejecucion(Nodo * inicial);
+int identificarRegistro(char * registro);
+int IF(IF_ID ifId, Nodo * nodo);
+Nodo * ID(ID_EX idEx, IF_ID ifId, Nodo * inicio);
+Nodo * EX(EX_MEM exMem, ID_EX idEx, Nodo * inicio, MEM_WB memWb);
+int MEM(MEM_WB memWb, EX_MEM exMem);
+int WB(MEM_WB memWb);
